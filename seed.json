@@ -1,0 +1,137 @@
+[
+  {
+    "id": "earth",
+    "bp": 4540000000,
+    "title": "Formação da Terra",
+    "summary": "A Terra se forma a partir de material que orbitava o jovem Sol.",
+    "era": "HADEANO",
+    "accent": "#e5aa83",
+    "body": "<p>Partículas de rocha e poeira se aglomeraram gradualmente, dando origem ao nosso planeta. A data é aproximada e representa o começo de uma história de 4,54 bilhões de anos.</p>"
+  },
+  {
+    "id": "moon",
+    "bp": 4510000000,
+    "title": "Origem da Lua",
+    "summary": "Um grande impacto dá origem ao satélite natural da Terra.",
+    "era": "HADEANO",
+    "accent": "#e5aa83",
+    "body": "<p>A hipótese mais aceita descreve a colisão da Terra jovem com outro corpo celeste. Parte do material lançado ao espaço formou a Lua.</p>"
+  },
+  {
+    "id": "life",
+    "bp": 3500000000,
+    "title": "Primeiros sinais de vida",
+    "summary": "Microrganismos deixam vestígios da vida antiga.",
+    "era": "ARQUEANO",
+    "accent": "#ddc28c",
+    "body": "<p>Os primeiros sinais amplamente reconhecidos de vida vêm de microrganismos. Há pesquisas sobre vestígios ainda mais antigos; a data aqui é uma referência aproximada.</p>"
+  },
+  {
+    "id": "oxygen",
+    "bp": 2400000000,
+    "title": "Grande Oxidação",
+    "summary": "O oxigênio começa a se acumular na atmosfera.",
+    "era": "PROTEROZOICO",
+    "accent": "#b5d8b9",
+    "body": "<p>A atividade de organismos fotossintéticos transformou a química do planeta. O processo ocorreu ao longo de muito tempo e abriu caminho para novas formas de vida.</p>"
+  },
+  {
+    "id": "complex",
+    "bp": 600000000,
+    "title": "Vida multicelular",
+    "summary": "Organismos complexos se tornam mais diversos.",
+    "era": "PROTEROZOICO",
+    "accent": "#b5d8b9",
+    "body": "<p>No fim do Proterozoico, diferentes formas de vida multicelular já habitavam os oceanos. A evolução dessa complexidade foi gradual.</p>"
+  },
+  {
+    "id": "cambrian",
+    "bp": 538800000,
+    "title": "Período Cambriano",
+    "summary": "A diversidade de animais marinhos cresce de forma marcante.",
+    "era": "FANEROZOICO",
+    "accent": "#a9d8d6",
+    "body": "<p>O começo do Cambriano marca uma fase de diversificação dos animais e de maior abundância de fósseis com partes duras.</p>"
+  },
+  {
+    "id": "dinosaurs",
+    "bp": 230000000,
+    "title": "Surgem os dinossauros",
+    "summary": "Os primeiros dinossauros aparecem no Triássico.",
+    "era": "FANEROZOICO",
+    "accent": "#a9d8d6",
+    "body": "<p>Esses animais surgiram muito antes dos humanos e se diversificaram por milhões de anos. As aves atuais descendem de um grupo de dinossauros.</p>"
+  },
+  {
+    "id": "extinction",
+    "bp": 66000000,
+    "title": "Extinção do Cretáceo",
+    "summary": "Um impacto e mudanças ambientais transformam a vida na Terra.",
+    "era": "FANEROZOICO",
+    "accent": "#a9d8d6",
+    "body": "<p>Há cerca de 66 milhões de anos, uma extinção em massa eliminou os dinossauros não avianos e muitos outros grupos de seres vivos.</p>"
+  },
+  {
+    "id": "sapiens",
+    "bp": 300000,
+    "title": "Homo sapiens",
+    "summary": "Nossa espécie aparece na África.",
+    "era": "HUMANIDADE",
+    "accent": "#e1c894",
+    "body": "<p>Os fósseis mais antigos atribuídos à nossa espécie remontam a aproximadamente 300 mil anos. Sua história ocupa uma faixa minúscula da escala geológica.</p>"
+  },
+  {
+    "id": "agriculture",
+    "bp": 12000,
+    "title": "Primeira agricultura",
+    "summary": "Comunidades humanas começam a cultivar plantas e domesticar animais.",
+    "era": "HUMANIDADE",
+    "accent": "#e1c894",
+    "body": "<p>A agricultura surgiu em diferentes regiões e em momentos distintos. Este ponto indica uma transição ampla, não um acontecimento único.</p>"
+  },
+  {
+    "id": "writing",
+    "bp": 5400,
+    "title": "Primeiros sistemas de escrita",
+    "summary": "Registros escritos começam a aparecer na Mesopotâmia.",
+    "era": "HISTÓRIA ESCRITA",
+    "accent": "#e1c894",
+    "body": "<p>Os primeiros sistemas de escrita conhecidos surgiram gradualmente. Eles mudaram a forma como sociedades registravam comércio, governo e memória.</p>"
+  },
+  {
+    "id": "printing",
+    "bp": 576,
+    "title": "Imprensa de tipos móveis",
+    "summary": "A impressão com tipos móveis se espalha pela Europa.",
+    "era": "HISTÓRIA ESCRITA",
+    "accent": "#e1c894",
+    "body": "<p>Por volta de 1450, a prensa de Gutenberg acelerou a reprodução de livros na Europa. Técnicas de impressão já existiam em outras partes do mundo.</p>"
+  },
+  {
+    "id": "moonlanding",
+    "bp": 57,
+    "title": "Humanos na Lua",
+    "summary": "A Apollo 11 pousa na superfície lunar em 1969.",
+    "era": "ERA CONTEMPORÂNEA",
+    "accent": "#b4dccb",
+    "body": "<p>Em 1969, Neil Armstrong e Buzz Aldrin caminharam na Lua, enquanto Michael Collins permaneceu em órbita.</p>"
+  },
+  {
+    "id": "web",
+    "bp": 37,
+    "title": "Nascimento da Web",
+    "summary": "A proposta da World Wide Web é apresentada em 1989.",
+    "era": "ERA CONTEMPORÂNEA",
+    "accent": "#b4dccb",
+    "body": "<p>A Web tornou mais simples publicar e conectar documentos na internet. Ela não é a mesma coisa que a internet, cuja história começou antes.</p>"
+  },
+  {
+    "id": "today",
+    "bp": 0,
+    "title": "Hoje",
+    "summary": "A história continua sendo escrita.",
+    "era": "PRESENTE",
+    "accent": "#b4dccb",
+    "body": "<p>Este ponto representa 2026. Adicione acontecimentos da sua pesquisa para construir um atlas próprio.</p>"
+  }
+]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR" data-aura-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6f6">
+  <meta name="description" content="Explore 4,54 bilhões de anos em uma linha do tempo proporcional. Aproxime, investigue e registre acontecimentos com textos e imagens.">
+  <title>Atlas do Tempo — da formação da Terra até hoje</title>
+  <link rel="stylesheet" href="./assets/aura/aura.css">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./assets/aura/aura.js" defer></script>
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="Atlas do Tempo, início"><span class="brand-mark">◌</span><span>ATLAS <em>DO TEMPO</em></span></a>
+      <nav class="top-nav" aria-label="Navegação principal"><a href="#inicio" data-route="home">Início</a><a href="#atlas" data-route="atlas">Linha do tempo</a></nav>
+      <div class="search-shell"><label class="sr-only" for="globalSearch">Buscar acontecimentos</label><input class="aura-input global-search" id="globalSearch" type="search" placeholder="Buscar no atlas..." autocomplete="off"><div class="search-results" id="searchResults" hidden></div></div>
+      <div class="top-actions">
+        <span class="private-pill"><span class="private-dot"></span> Salvo no Atlas</span>
+        <button class="aura-button aura-button--secondary theme-toggle" data-aura-theme-toggle type="button" aria-label="Modo escuro" aria-pressed="false"><span data-aura-theme-label aria-hidden="true">Modo escuro</span></button>
+        <button class="aura-button aura-button--primary" id="newEventBtn" type="button"><span aria-hidden="true">＋</span> Adicionar acontecimento</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="home-view" id="inicio">
+      <section class="intro" aria-labelledby="pageTitle">
+        <div class="intro-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> UMA VIAGEM EM ESCALA REAL</div>
+          <h1 id="pageTitle">A história inteira.<br><span>Uma linha do tempo.</span></h1>
+          <p>Da formação da Terra ao instante presente. A distância entre acontecimentos respeita o tempo: aproxime para descobrir o que não cabe numa vista só.</p>
+          <div class="intro-chips"><span>4,54 bilhões de anos</span><span class="chip-sep"></span><span id="eventCount">15 acontecimentos</span><span class="chip-sep"></span><span>Infinitas histórias para contar</span></div>
+          <a class="aura-button aura-button--primary hero-cta" href="#atlas">Explorar a linha do tempo <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="orbital-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div><div class="planet"><div class="planet-glow"></div></div><div class="star star-a"></div><div class="star star-b"></div><div class="star star-c"></div><div class="star star-d"></div></div>
+      </section>
+
+      <section class="discover" aria-labelledby="discoverTitle"><div class="discover-head"><div><div class="section-kicker">DOCUMENTOS DO ATLAS</div><h2 id="discoverTitle">Histórias em destaque</h2><p>Uma seleção para começar a explorar. Os demais acontecimentos estão na linha do tempo.</p></div><button class="aura-button aura-button--secondary" id="shuffleHighlights" type="button">Outros destaques <span aria-hidden="true">↻</span></button></div><div class="milestone-grid" id="milestoneGrid"></div><div class="data-actions"><div><strong>Seus documentos, em um só lugar</strong><p>Os registros ficam no banco de dados e aparecem em qualquer aparelho com acesso à instalação. Importe o arquivo do Atlas anterior ou baixe uma cópia.</p></div><div><button class="aura-button aura-button--secondary" id="importBtn" type="button">Importar registros</button><button class="aura-button aura-button--secondary" id="exportBtn" type="button">Baixar cópia</button><input id="importInput" type="file" accept="application/json,.json" hidden></div></div></section>
+      </div>
+
+      <section class="explorer" id="atlas" aria-label="Explorador da linha do tempo" hidden>
+        <div class="explorer-head">
+          <div><div class="section-kicker">EXPLORADOR TEMPORAL</div><h2>Encontre seu lugar na história</h2></div>
+          <div class="explorer-tools"><button class="icon-button" id="helpBtn" type="button" title="Como navegar" aria-label="Como navegar">?</button><button class="text-button" id="resetBtn" type="button">Ver todo o tempo <span aria-hidden="true">↗</span></button></div>
+        </div>
+        <div class="jump-row" role="group" aria-label="Ir para uma época">
+          <span>IR PARA</span>
+          <button class="jump active" data-jump="all" type="button">Tudo</button>
+          <button class="jump" data-jump="life" type="button">Primeira vida</button>
+          <button class="jump" data-jump="dinosaurs" type="button">Dinossauros</button>
+          <button class="jump" data-jump="humans" type="button">Humanidade</button>
+          <button class="jump" data-jump="history" type="button">História escrita</button>
+          <button class="jump" data-jump="recent" type="button">Séculos recentes</button>
+        </div>
+        <div class="timeline-frame">
+          <div class="timeline-topline"><span id="viewRange">4,54 bilhões de anos atrás — Hoje</span><span class="drag-hint">ARRASTE OU DESLIZE <span aria-hidden="true">↔</span></span></div>
+          <div class="timeline-viewport" id="timeline" role="region" aria-label="Linha do tempo interativa" tabindex="0">
+            <div class="eon-track" id="eonTrack"></div>
+            <div class="time-axis"></div>
+            <div class="tick-layer" id="tickLayer"></div>
+            <div class="event-layer" id="eventLayer"></div>
+            <div class="timeline-empty" id="timelineEmpty" hidden>Nenhum acontecimento nesta área. Afaste o zoom ou arraste a linha do tempo.</div>
+          </div>
+          <div class="zoom-bar">
+            <div class="zoom-label"><span class="zoom-icon">⌕</span><div><strong>Escala do tempo</strong><small id="scaleLabel">Visão completa · 4,54 bilhões de anos</small><small id="focusLabel" class="focus-caption">Zoom em: Formação da Terra</small></div></div>
+            <div class="zoom-control"><button class="aura-button aura-button--secondary aura-button--icon" type="button" id="zoomOut" aria-label="Afastar zoom">−</button><input class="aura-range" id="zoomSlider" type="range" min="0" max="60" value="0" aria-label="Nível de zoom"><button class="aura-button aura-button--secondary aura-button--icon" type="button" id="zoomIn" aria-label="Aproximar zoom">＋</button></div>
+          </div>
+          <div class="navigator"><span class="navigator-title">MAPA DO TEMPO</span><span class="navigator-edge">Terra</span><div class="navigator-track" id="navigatorTrack" role="slider" tabindex="0" aria-label="Mover o trecho visível pela história" aria-valuemin="0" aria-valuemax="4540000000" aria-valuenow="2270000000"><div class="navigator-window" id="navigatorWindow"></div><span class="navigator-point"></span></div><span class="navigator-edge">Hoje</span><span class="navigator-hint">Clique para navegar</span></div>
+        </div>
+        <div class="explorer-foot"><span><i class="legend-dot sample"></i> Eventos do atlas</span><span><i class="legend-dot custom"></i> Seus acontecimentos</span><span class="foot-tip">Escolha uma época, aproxime e use o mapa para se orientar</span></div>
+      </section>
+
+    </main>
+    <footer><span class="footer-brand">◌ ATLAS DO TEMPO</span><span>Uma forma de ver a história em perspectiva.</span><span>Documentos salvos no Atlas</span></footer>
+  </div>
+
+  <div class="overlay" id="detailOverlay" hidden><div class="overlay-backdrop" data-close="detail"></div><aside class="detail-panel" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><button class="close-btn" id="closeDetail" type="button" aria-label="Fechar">×</button><div id="detailContent"></div></aside></div>
+
+  <div class="overlay" id="editorOverlay" hidden><div class="overlay-backdrop" data-close="editor"></div><section class="editor-panel" role="dialog" aria-modal="true" aria-labelledby="editorTitle"><div class="editor-header"><div><div class="section-kicker">SEU ATLAS</div><h2 id="editorTitle">Adicionar acontecimento</h2></div><button class="close-btn" id="closeEditor" type="button" aria-label="Fechar">×</button></div><form id="eventForm"><input type="hidden" id="eventId"><label class="form-label" for="eventTitle">Título do acontecimento</label><input class="aura-input field" id="eventTitle" maxlength="100" required placeholder="Ex.: A invenção da imprensa"><div class="date-row"><div><label class="form-label" for="dateMode">Como marcar a data</label><select class="aura-input field" id="dateMode"><option value="bp">Há quantos anos</option><option value="bce">Ano a.C.</option><option value="ce">Ano d.C.</option></select></div><div><label class="form-label" for="eventDate">Valor</label><input class="aura-input field" id="eventDate" type="number" min="0" max="4540000000" step="1" required placeholder="Ex.: 550"></div></div><p class="form-hint" id="dateHint">Use “há quantos anos” para a escala geológica.</p><label class="form-label" for="eventSummary">Resumo curto</label><textarea class="aura-input field" id="eventSummary" rows="2" maxlength="240" placeholder="Uma frase para apresentar este marco na linha do tempo."></textarea><label class="form-label" for="richEditor">Documento</label><div class="rich-wrap"><div class="rich-toolbar" role="toolbar" aria-label="Formatação do documento"><button type="button" data-format="bold" aria-label="Negrito"><b>B</b></button><button type="button" data-format="italic" aria-label="Itálico"><i>I</i></button><button type="button" data-format="formatBlock" data-value="h3" aria-label="Título">H</button><button type="button" data-format="insertUnorderedList" aria-label="Lista">☷</button><button type="button" id="insertImage" aria-label="Inserir imagem">▧</button></div><div id="richEditor" class="rich-editor" contenteditable="true" role="textbox" aria-multiline="true" data-placeholder="Conte a história. Formate o texto e adicione imagens..."></div></div><input id="imageInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden><label class="form-label" for="relatedSearch">Documentos relacionados</label><p class="form-hint">Busque e selecione outros acontecimentos para criar links no detalhe deste documento.</p><div id="selectedRelated" class="related-chips"></div><input class="aura-input field" id="relatedSearch" type="search" placeholder="Buscar outro acontecimento..." autocomplete="off"><div id="relatedMatches" class="related-matches"></div><p class="form-hint">Texto, imagens e relações são salvos no banco de dados do Atlas.</p><div class="form-actions"><button class="aura-button aura-button--secondary" id="cancelEditor" type="button">Cancelar</button><button class="aura-button aura-button--primary" id="saveEvent" type="submit">Salvar acontecimento</button></div></form></section></div>
+
+  <div class="overlay" id="helpOverlay" hidden><div class="overlay-backdrop" data-close="help"></div><section class="help-panel" role="dialog" aria-modal="true" aria-labelledby="helpTitle"><button class="close-btn" id="closeHelp" type="button" aria-label="Fechar">×</button><div class="section-kicker">COMO FUNCIONA</div><h2 id="helpTitle">Uma escala fiel ao tempo</h2><p>Na visão completa, milhões de anos ocupam mais espaço que séculos. Por isso os acontecimentos recentes aparecem reunidos. Escolha uma época ou clique num grupo para aproximar.</p><ul><li><strong>Escolha uma época</strong> nos atalhos acima da linha.</li><li><strong>Aproxime ou afaste</strong> com os botões, o controle ou Ctrl + roda do mouse.</li><li><strong>Arraste ou deslize horizontalmente</strong> na linha para navegar, ou clique no mapa inferior.</li><li><strong>Busque</strong> no campo superior e abra os documentos encontrados.</li><li><strong>Relacione</strong> documentos no editor para navegar entre assuntos conectados.</li></ul><button class="aura-button aura-button--primary" id="gotIt" type="button">Entendi</button></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -20,6 +20,8 @@ STATIC_FILES = {
     "/index.html": "index.html",
     "/app.js": "app.js",
     "/styles.css": "styles.css",
+    "/favicon.svg": "favicon.svg",
+    "/favicon.ico": "favicon.ico",
     "/assets/aura/aura.js": "assets/aura/aura.js",
     "/assets/aura/aura.css": "assets/aura/aura.css",
     "/assets/aura/fontes-aura/manrope-variable.ttf": "assets/aura/fontes-aura/manrope-variable.ttf",
